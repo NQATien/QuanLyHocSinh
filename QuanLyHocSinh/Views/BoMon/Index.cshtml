@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var lsbm = ViewData["listBoMon"] as IEnumerable<BoMon>;
+}
+
+<h1>Danh sách các bộ môn</h1>
+<a class="btn btn-success" asp-controller="BoMon" asp-action="Create"> Thêm bộ môn mới </a>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Bộ Môn</th>
+                        <th scope="col">Action </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in lsbm)
+                    {
+                        <tr>
+                            <th scope="row">@item.BoMonID</th>
+                            <td>@item.BoMonName</td>
+                            
+                            <td>
+
+
+                                <a class="btn btn-success" asp-controller="BoMon" asp-action="Edit" asp-route-ID="@item.BoMonID"><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-danger" asp-controller="BoMon" asp-action="Delete" asp-route-ID="@item.BoMonID"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

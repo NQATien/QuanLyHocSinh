@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model HocKyVM
+
+<h1>Bạn có muốn xóa </h1>
+
+<form method="post" asp-action="Delete" asp-controller="HocKy">
+    <div class="form-group">
+        <label>Học Kỳ ID: </label>
+        <input asp-for="HocKyId" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label>Học Kỳ: </label>
+        <input asp-for="HocKyName" class="form-control" readonly />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

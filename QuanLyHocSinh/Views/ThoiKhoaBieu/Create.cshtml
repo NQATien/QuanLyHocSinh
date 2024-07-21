@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ThoiKhoaBieuVM
+
+<h1>Thêm thời khoá biểu mới</h1>
+
+<form method="post" asp-action="Create" asp-controller="ThoiKhoaBieu" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label>TKB ID: </label>
+        <input asp-for="ThoiKhoaBieuId" class="form-control" />
+        <label>TKB Lớp: </label>
+        <input asp-for="ThoiKhoaBieuName" class="form-control" />
+        <label>Giáo viên: </label>
+        <input asp-for="GiaoVienName" class="form-control" />
+        <label>Môn Học: </label>
+        <input asp-for="MonName" class="form-control" />
+        <label>Ngày: </label>
+        <input asp-for="Ngay" class="form-control" />
+        <label>Tiết: </label>
+        <input asp-for="Tiet" class="form-control" />
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Xác nhận</button>
+</form>

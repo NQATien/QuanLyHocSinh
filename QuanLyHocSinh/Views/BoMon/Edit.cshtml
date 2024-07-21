@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model BoMonVM
+
+<h1>Chỉnh sửa </h1>
+
+<form method="post" asp-action="Edit" asp-controller="BoMon" enctype="multipart/form-data">
+    <input asp-for="BoMonId" type="hidden" class="form-control" />
+    <div class="form-group">
+        <label>Bộ môn: </label>
+        <input asp-for="BoMonName" class="form-control" />
+        <span asp-validation-for="BoMonName" class="text-danger small"></span>
+     
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

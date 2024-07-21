@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model LopVM
+
+<h1>Chỉnh sửa </h1>
+
+<form method="post" asp-action="Edit" asp-controller="Lop" enctype="multipart/form-data">
+    <input asp-for="LopId" type="hidden" class="form-control" />
+    <div class="form-group">
+        <label>Lớp: </label>
+        <input asp-for="LopName" class="form-control" />
+        <span asp-validation-for="LopName" class="text-danger small"></span>
+        <label>Sỉ số: </label>
+        <input asp-for="Siso" class="form-control" />
+        <span asp-validation-for="Siso" class="text-danger small"></span>
+        <label>Khối ID: </label>
+        <input asp-for="KhoiId" class="form-control" />
+        <span asp-validation-for="KhoiId" class="text-danger small"></span>
+        <label>Khối : </label>
+        <input asp-for="KhoiName" class="form-control" />
+        <span asp-validation-for="KhoiName" class="text-danger small"></span>
+ 
+    </div>
+
+    <button type="submit" class="btn btn-primary">Xác nhận</button>
+</form>

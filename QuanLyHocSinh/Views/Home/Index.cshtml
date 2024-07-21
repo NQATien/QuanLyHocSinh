@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (ViewData["WelcomeMessage"] == null)
+{
+    <div class="text-center">
+        <h1 class="display-3">Project Quản lý Học Sinh</h1>
+        <h1 class="display-4">Đăng nhập để vào chức năng:</h1>
+        <a href="@Url.Action("Login", "Home")" class="login-button">
+            <button style="display: inline-block;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 10px;
+                background-color: #3498db;
+                color: #fff;
+                cursor: pointer;">
+                Đăng nhập
+            </button>
+        </a>
+    </div>
+}
+
+<!-- Display welcome message if available -->
+@if (ViewData["WelcomeMessage"] != null)
+{
+    <div class="text-center mt-4">
+        <h1 class="display-3">Chào mừng</h1>
+        <h1 class="display-4">@ViewData["WelcomeMessage"]</h1>
+    </div>
+}

@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model BoMonVM
+
+<h1>Bạn có muốn xóa </h1>
+
+<form method="post" asp-action="Delete" asp-controller="BoMon">
+    <div class="form-group">
+        <label>Bộ môn ID: </label>
+        <input asp-for="BoMonId" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label>Bộ môn: </label>
+        <input asp-for="BoMonName" class="form-control" readonly />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var lstb = ViewData["listThongBao"] as IEnumerable<QuanLyHocSinh.Models.ThongBao>;
+}
+
+<h1 style ="margin-left: 20px;">Danh Sách Thông Báo</h1>
+<a class="btn btn-success" asp-controller="ThongBao" asp-action="Create"
+   style="margin-bottom: 10px; margin-left: 20px;"> Thêm Thông Báo </a>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Tên Thông Báo</th>
+                        <th scope="col">Thông Tin</th>
+                        <th scope="col">Action </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in lstb)
+                    {
+                        <tr>
+                            <th scope="row">@item.ThongBaoID</th>
+                            <td>@item.ThongBaoName</td>
+                            <td>@item.ThongTin</td>
+                            <td>
+                                <a class="btn btn-success" asp-controller="ThongBao" asp-action="Edit" asp-route-ID="@item.ThongBaoID"><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-danger" asp-controller="ThongBao" asp-action="Delete" asp-route-ID="@item.ThongBaoID"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

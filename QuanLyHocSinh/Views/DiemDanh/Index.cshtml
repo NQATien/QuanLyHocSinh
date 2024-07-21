@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var lsdd = ViewData["listDiemDanh"] as IEnumerable<QuanLyHocSinh.Models.DiemDanh>;
+}
+
+<h1 style="margin-left: 20px;">Danh Sách Điểm Danh</h1>
+<a class="btn btn-success" asp-controller="DiemDanh" asp-action="Create"
+   style="margin-bottom: 10px; margin-left: 20px;"> Thêm Điểm Danh </a>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Môn</th>
+                        <th scope="col">Ngày</th>
+                        <th scope="col">Tiết</th>
+                        <th scope="col">Học Sinh</th>
+                        <th scope="col">Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in lsdd)
+                    {
+                        <tr>
+                            <th scope="row">@item.DiemDanhID</th>
+                            <td>@item.MonName</td>
+                            <td>@item.Ngay</td>
+                            <td>@item.Tiet</td>
+                            <td>@item.HocSinhName</td>
+                            <td>
+                                <a class="btn btn-success" asp-controller="DiemDanh" asp-action="Edit" asp-route-ID="@item.DiemDanhID"><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-danger" asp-controller="DiemDanh" asp-action="Delete" asp-route-ID="@item.DiemDanhID"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

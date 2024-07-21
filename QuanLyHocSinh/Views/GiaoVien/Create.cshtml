@@ -1,0 +1,102 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@*@model GiaoVienVM
+
+<h1>Thêm giáo viên mới</h1>
+
+<form method="post" asp-action="Create" asp-controller="GiaoVien" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label>Họ và Tên: </label>
+        <input asp-for="GiaoVienName" class="form-control" />
+        <label>Giới tính: </label>
+        <input asp-for="GioiTinh" class="form-control" />
+        <label>Lớp ID: </label>
+        <input asp-for="LopId" class="form-control" />
+        <label>Lớp: </label>
+        <input asp-for="LopName" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>*@
+@model GiaoVienVM
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thêm Giáo viên mới</title>
+    <!-- Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Tùy chỉnh hình nền (background) cho trang */
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Tùy chỉnh giao diện cho form */
+        .container {
+            max-width: 400px;
+            background-color: rgba(255, 255, 255, 0.9); /* Màu nền trắng mờ */
+            padding: 20px;
+            margin-top: 100px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Tùy chỉnh màu sắc cho tiêu đề */
+        h1 {
+            color: #007BFF; 
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Tùy chỉnh màu sắc cho nút Submit */
+        .btn-primary {
+            background-color: #17A2B8; /* Màu xanh dương nhạt */
+            border-color: #17A2B8; /* Màu xanh dương nhạt */
+        }
+
+            /* Hiệu ứng hover cho nút Submit */
+            .btn-primary:hover {
+                background-color: #138496; /* Màu xanh dương đậm */
+                border-color: #138496; /* Màu xanh dương đậm */
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thêm giáo viên mới</h1>
+
+        <form method="post" asp-action="Create" asp-controller="GiaoVien" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="GiaoVienName">Họ và Tên:</label>
+                <input asp-for="GiaoVienName" class="form-control" id="GiaoVienName" />
+            </div>
+
+            <div class="form-group">
+                <label for="GioiTinh">Giới tính:</label>
+                <input asp-for="GioiTinh" class="form-control" id="GioiTinh" />
+            </div>
+
+            <div class="form-group">
+                <label for="LopId">Lớp ID:</label>
+                <input asp-for="LopId" class="form-control" id="LopId" />
+            </div>
+
+            <div class="form-group">
+                <label for="LopName">Lớp:</label>
+                <input asp-for="LopName" class="form-control" id="LopName" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS script link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

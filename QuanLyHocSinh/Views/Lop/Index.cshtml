@@ -1,0 +1,67 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var lslop = ViewData["listLop"] as IEnumerable<Lop>;
+}
+
+<h1 margin-left: 20px;">Danh sách</h1>
+<div class="container">
+    <div class = "row">
+        <div class="col-lg-3">
+            <a class="btn btn-success" asp-controller="Lop" asp-action="Create"> Thêm lớp mới </a>
+        </div>
+        
+        @model List<Lop>
+        @using (Html.BeginForm("Search","Lop", FormMethod.Get))
+        {
+        <div>
+            <select name="idlopk">
+                <option value="">Chọn khối</option>
+                <option value="2">Khối 12</option>
+                <option value="3">Khối 11</option>
+                <option value="4">Khối 10</option>
+                <option value="5">Khối 9</option>
+            </select>
+            <button type="submit">Lọc</button>
+        </div>
+        }
+        </div>
+        
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Lớp </th>
+                        <th scope="col">Khối</th>
+                        <th scope="col">Action </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in lslop)
+                    {
+                        <tr>
+                            <th scope="row">@item.LopID</th>
+                            <td>@item.LopName</td>
+                            <td>@item.KhoiName</td>
+                            
+                            <td>
+                                <a class="btn btn-primary" asp-controller="Lop" asp-action="Detail" asp-route-ID="@item.LopID">
+                                    <i class="far fa-eye"></i>
+                                </a>
+
+                                <a class="btn btn-success" asp-controller="Lop" asp-action="Edit" asp-route-ID="@item.LopID"><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-danger" asp-controller="Lop" asp-action="Delete" asp-route-ID="@item.LopID"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

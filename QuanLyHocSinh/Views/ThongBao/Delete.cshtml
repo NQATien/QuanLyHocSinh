@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ThongBaoVM
+
+<h1>Bạn có muốn xóa thông báo</h1>
+
+<form method="post" asp-action="Delete" asp-controller="ThongBao">
+    <div class="form-group">
+        <label>ID: </label>
+        <input asp-for="ThongBaoId" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label>Tên Thông Báo </label>
+        <input asp-for="ThongBaoName" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label>Thông Tin: </label>
+        <input asp-for="ThongTin" class="form-control" readonly />
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Xác nhận</button>
+</form>

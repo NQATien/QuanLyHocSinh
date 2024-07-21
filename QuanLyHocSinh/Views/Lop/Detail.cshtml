@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var lopDetail = ViewBag.LopDetail;
+    var hocsinhDetail = ViewBag.HocSinhDetail;
+
+}
+
+
+<h1>Chi tiết</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Lớp </th>
+                        <th scope="col"> Si số </th>
+                        <th scope="col">Khối ID </th>
+                        <th scope="col">Khối </th>
+                       
+
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">@lopDetail.LopID</th>
+                        <td>@lopDetail.LopName</td>
+                        <td>@lopDetail.SiSo</td>
+                        <td>@lopDetail.KhoiID</td>
+                        <td>@lopDetail.KhoiName</td>
+
+                    </tr>
+                   
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

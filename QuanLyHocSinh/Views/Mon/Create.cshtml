@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MonVM
+
+<h1>Thêm môn mới</h1>
+
+<form method="post" asp-action="Create" asp-controller="Mon" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label> Môn: </label>
+        <input asp-for="MonName" class="form-control" />
+        <label> Bộ Môn ID: </label>
+        <input asp-for="BoMonId" class="form-control" />
+        <label>Bộ Môn: </label>
+        <input asp-for="BoMonName" class="form-control" />
+        <label> Giáo viên ID: </label>
+        <input asp-for="GiaoVienId" class="form-control" />
+        <label> Giáo Viên: </label>
+        <input asp-for="GiaoVienName" class="form-control" />
+  
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

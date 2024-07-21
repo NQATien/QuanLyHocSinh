@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model KhoiVM
+
+<h1>Thêm khối mới</h1>
+
+<form method="post" asp-action="Create" asp-controller="Khoi" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label>Khối: </label>
+        <input asp-for="KhoiName" class="form-control" />
+        <label>Số lượng học sinh: </label>
+        <input asp-for="SoLuonghs" class="form-control" />
+  
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

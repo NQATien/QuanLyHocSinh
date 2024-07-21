@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model DiemVM
+
+<h1>Nhập điểm các Học Kỳ</h1>
+
+<form method="post" asp-action="Create" asp-controller="Diem" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label>Điểm HK1: </label>
+        <input asp-for="Diemhk1" class="form-control" />
+        <label>Điểm HK2: </label>
+        <input asp-for="Diemhk2" class="form-control" />
+        <label>Điểm HK3: </label>
+        <input asp-for="Diemhk3" class="form-control" />
+        <label>Họ và Tên: </label>
+        <input asp-for="HocSinhName" class="form-control" />
+
+  
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

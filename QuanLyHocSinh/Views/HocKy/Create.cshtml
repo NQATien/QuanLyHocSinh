@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model HocKyVM
+
+<h1>Thêm học kỳ mới</h1>
+
+<form method="post" asp-action="Create" asp-controller="HocKy" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label>Học Kỳ: </label>
+        <input asp-for="HocKyName" class="form-control" />
+        <label>Năm học ID: </label>
+        <input asp-for="NamHocId" class="form-control" />
+        <label>Năm học: </label>
+        <input asp-for="NamHocName" class="form-control" />
+  
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

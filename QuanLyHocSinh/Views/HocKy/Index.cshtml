@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var lshk = ViewData["listHocKy"] as IEnumerable<HocKy>;
+}
+
+<h1 style="margin-left: 20px;">Học Kỳ</h1>
+<a class="btn btn-success" asp-controller="HocKy" asp-action="Create"
+   style="margin-bottom: 10px; margin-left: 20px;"> Thêm học kỳ mới </a>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Học Kỳ</th>
+                        <th scope="col">Năm học</th>
+                        <th scope="col">Action </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in lshk)
+                    {
+                        <tr>
+                            <th scope="row">@item.HocKyID</th>
+                            <td>@item.HocKyName</td>
+                            <td>@item.NamHocName</td>
+                            
+                            <td>
+                                
+
+                    
+                                <a class="btn btn-danger" asp-controller="NamHoc" asp-action="Delete" asp-route-ID="@item.NamHocID"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

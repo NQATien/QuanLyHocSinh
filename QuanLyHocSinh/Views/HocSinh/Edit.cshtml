@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model HocSinhVM
+
+<h1>Chỉnh sửa thông tin</h1>
+
+<form method="post" asp-action="Edit" asp-controller="HocSinh" enctype="multipart/form-data">
+    <input asp-for="HocSinhId" type="hidden" class="form-control" />
+    <div class="form-group">
+        <label>Họ và Tên: </label>
+        <input asp-for="HocSinhName" class="form-control" />
+        <span asp-validation-for="HocSinhName" class="text-danger small"></span>
+        <label>Giới tính: </label>
+        <input asp-for="GioiTinh" class="form-control" />
+        <span asp-validation-for="GioiTinh" class="text-danger small"></span>
+        <label>Lớp ID: </label>
+        <input asp-for="LopId" class="form-control" />
+        <span asp-validation-for="LopId" class="text-danger small"></span>
+        <label>Lớp: </label>
+        <input asp-for="LopName" class="form-control" />
+        <span asp-validation-for="LopName" class="text-danger small"></span>
+        <label>Ảnh : </label>
+        <label asp-for="ImageFile"></label>
+        <input asp-for="ImageFile" type="file" name="imageFile" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Xác nhận</button>
+</form>

@@ -1,0 +1,81 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model GiaoVienVM
+<h1>Chỉnh sửa thông tin</h1>
+
+<form method="post" asp-action="Edit" asp-controller="GiaoVien" enctype="multipart/form-data">
+    <input asp-for="GiaoVienId" type="hidden" class="form-control" />
+    <div class="form-group">
+        <label>Họ và Tên: </label>
+        <input asp-for="GiaoVienName" class="form-control" />
+        <span asp-validation-for="GiaoVienName" class="text-danger small"></span>
+        <label>Giới tính: </label>
+        <input asp-for="GioiTinh" class="form-control" />
+        <span asp-validation-for="GioiTinh" class="text-danger small"></span>
+        <label>Lớp ID: </label>
+        <input asp-for="LopId" class="form-control" />
+        <span asp-validation-for="LopId" class="text-danger small"></span>
+        <label>Lớp: </label>
+        <input asp-for="LopName" class="form-control" />
+        <span asp-validation-for="LopName" class="text-danger small"></span>
+        <label>Ảnh : </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@*<div class="container">
+    <div class="text">
+        Chỉnh sửa thông tin
+    </div>
+    <form method="post" asp-action="Edit" asp-controller="GiaoVien" enctype="multipart/form-data">
+        <input asp-for="GiaoVienId" type="hidden" class="form-control" />
+        <div class="form-row">
+            <div class="input-data">
+                <input type="text" required>
+                <div class="underline"></div>
+                <label for="">Họ và Tên:</label>
+                <input asp-for="GiaoVienName" class="form-control" />
+                <span asp-validation-for="GiaoVienName" class="text-danger small"></span>
+            </div>
+            <div class="input-data">
+                <input type="text" required>
+                <div class="underline"></div>
+                <label for="">Giới tính:</label>
+                <input asp-for="GioiTinh" class="form-control" />
+                <span asp-validation-for="GioiTinh" class="text-danger small"></span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="input-data">
+                <input type="text" required>
+                <div class="underline"></div>
+                <label for="">Lớp ID:</label>
+                <input asp-for="LopId" class="form-control" />
+                <span asp-validation-for="LopId" class="text-danger small"></span>
+            </div>
+            <div class="input-data">
+                <input type="text" required>
+                <div class="underline"></div>
+                <label for="">Lớp:</label>
+                <input asp-for="LopName" class="form-control" />
+                <span asp-validation-for="LopName" class="text-danger small"></span>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="input-data textarea">
+                <textarea rows="8" cols="80" required></textarea>
+                <div class="form-row submit-btn">
+                    <div class="input-data">
+                        <div class="inner"></div>
+                        <input type="submit" value="submit">
+                    </div>
+                </div>
+    </form>
+</div>*@
+
+

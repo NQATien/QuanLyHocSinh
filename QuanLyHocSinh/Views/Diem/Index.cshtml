@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var lsdiem = ViewData["listDiem"] as IEnumerable<Diem>;
+}
+
+<h1 style="margin-left: 20px;">Danh sách điểm tổng các Học Kỳ</h1>
+<a class="btn btn-success" asp-controller="Diem" asp-action="Create"
+   style="margin-bottom: 10px; margin-left: 20px;"> Nhập điểm mới </a>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">HK1</th>
+                        <th scope="col">HK2</th>
+                        <th scope="col">HK3</th>
+                        <th scope="col">Họ và Tên</th>
+                        <th scope="col">Action </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in lsdiem)
+                    {
+                        <tr>
+                            <th scope="row">@item.DiemID</th>
+                            <td>@item.DiemHK1</td>
+                            <td>@item.DiemHK2</td>
+                            <td>@item.DiemHK3</td>
+                            <td>@item.HocSinhName</td>
+                            
+                            <td>
+                                
+
+                                <a class="btn btn-success" asp-controller="Diem" asp-action="Edit" asp-route-ID="@item.DiemID"><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-danger" asp-controller="Diem" asp-action="Delete" asp-route-ID="@item.DiemID"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

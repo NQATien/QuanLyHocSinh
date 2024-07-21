@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var lskhoi = ViewData["listKhoi"] as IEnumerable<Khoi>;
+}
+
+<h1 style="margin-left: 20px;">Danh sách</h1>
+<a class="btn btn-success" asp-controller="Khoi" asp-action="Create"
+   style="margin-bottom: 10px; margin-left: 20px;"> Thêm Khối mới </a>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Khối</th>
+                        <th scope="col">Số lượng học sinh</th>
+                        <th scope="col">Action </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in lskhoi)
+                    {
+                        <tr>
+                            <th scope="row">@item.KhoiID</th>
+                            <td>@item.KhoiName</td>
+                            <td>@item.SoLuongHS</td>
+                            
+                            <td>
+                                
+
+                                <a class="btn btn-success" asp-controller="Khoi" asp-action="Edit" asp-route-ID="@item.KhoiID"><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-danger" asp-controller="Khoi" asp-action="Delete" asp-route-ID="@item.KhoiID"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
